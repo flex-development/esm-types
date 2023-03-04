@@ -3,15 +3,16 @@
  * @module esm-types/types/tests/unit-d/ResolvedModuleUrl
  */
 
+import type FileUrl from '../url-file'
 import type TestSubject from '../url-resolved-module'
 
 describe('unit-d:types/ResolvedModuleUrl', () => {
-  it('should extract data:${string}', () => {
-    expectTypeOf<TestSubject>().extract<`data:${string}`>().toBeString()
+  it('should extract FileUrl', () => {
+    expectTypeOf<TestSubject>().extract<FileUrl>().toBeString()
   })
 
-  it('should extract file:${string}', () => {
-    expectTypeOf<TestSubject>().extract<`file:${string}`>()
+  it('should extract data:${string}', () => {
+    expectTypeOf<TestSubject>().extract<`data:${string}`>().toBeString()
   })
 
   it('should extract http:${string}', () => {

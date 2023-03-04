@@ -1,0 +1,42 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "allowCompoundWords": true,
+  "caseSensitive": false,
+  "dictionaries": ["@flex-development/esm-types"],
+  "dictionaryDefinitions": [
+    {
+      "name": "@flex-development/esm-types",
+      "path": "./.dictionary.txt"
+    }
+  ],
+  "enableGlobDot": true,
+  "failFast": false,
+  "flagWords": [],
+  "ignorePaths": [
+    "**/*.log",
+    "**/*.snap",
+    "**/.*ignore",
+    "**/.gitconfig",
+    "**/CHANGELOG.md",
+    "**/LICENSE.md",
+    ".cspell.json",
+    ".git/",
+    ".husky/_/",
+    ".vscode/settings.json",
+    ".yarn/",
+    "patches/",
+    "yarn.lock"
+  ],
+  "ignoreRegExpList": [
+    "/@flex-development\\/.*/",
+    "/from\\s+(['\"]).*\\1/",
+    "import\\(.*\\)"
+  ],
+  "ignoreWords": [],
+  "language": "en-US",
+  "patterns": [],
+  "readonly": true,
+  "useGitignore": true,
+  "usePnP": false,
+  "version": "0.2"
+}

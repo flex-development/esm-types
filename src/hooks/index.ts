@@ -4,3 +4,4 @@
  */
 
 export type { default as GetFormatHookContext } from './get-format-context'
+export type { default as GetFormatHookResult } from './get-format-result'

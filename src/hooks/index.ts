@@ -3,5 +3,6 @@
  * @module esm-types/hooks
  */
 
+export type { default as GetFormatHook } from './get-format'
 export type { default as GetFormatHookContext } from './get-format-context'
 export type { default as GetFormatHookResult } from './get-format-result'

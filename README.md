@@ -17,6 +17,10 @@
 - [Install](#install)
 - [Use](#use)
 - [API](#api)
+  - [Enums](#enums)
+  - [Hooks](#hooks)
+  - [Interfaces](#interfaces)
+  - [Type Definitions](#type-definitions)
 - [Related](#related)
 - [Contribute](#contribute)
 
@@ -214,7 +218,43 @@ export const resolve = async (specifier, context) => {
 
 ## API
 
-**TODO**: api documentation.
+This package exports the identifiers listed below.
+
+There is no default export.
+
+### Enums
+
+- [`AssertType`](src/enums/assert-type.ts)
+- [`Format`](src/enums/format.ts)
+
+### Hooks
+
+- [`GetFormatHookContext`](src/hooks/get-format-context.ts)
+- [`GetFormatHookResult`](src/hooks/get-format-result.ts)
+- [`GetFormatHook`](src/hooks/get-format.ts)
+- [`GetSourceHookContext`](src/hooks/get-source-context.ts)
+- [`GetSourceHook`](src/hooks/get-source.ts)
+- [`GlobalPreloadHookContext`](src/hooks/global-preload-context.ts)
+- [`GlobalPreloadHook`](src/hooks/global-preload.ts)
+- [`LoadHookContext`](src/hooks/load-context.ts)
+- [`LoadHookResult`](src/hooks/load-result.ts)
+- [`LoadHook`](src/hooks/load.ts)
+- [`ResolveHookContext`](src/hooks/resolve-context.ts)
+- [`ResolveHookResult`](src/hooks/resolve-result.ts)
+- [`ResolveHook`](src/hooks/resolve.ts)
+- [`SourceHookResult`](src/hooks/source-result.ts)
+- [`TransformSourceHookContext`](src/hooks/transform-source-context.ts)
+- [`TransformSourceHook`](src/hooks/transform-source.ts)
+
+### Interfaces
+
+- [`ImportAssertions`](src/interfaces/import-assertions.ts)
+
+### Type Definitions
+
+- [`FileUrl`](src/types/url-file.ts)
+- [`ResolvedModuleUrl`](src/types/url-resolved-module.ts)
+- [`Source`](src/types/source.ts)
 
 ## Related
 

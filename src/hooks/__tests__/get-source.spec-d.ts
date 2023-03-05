@@ -4,9 +4,9 @@
  */
 
 import type { ResolvedModuleUrl } from '#src/types'
-import type TestSubject from '../get-format'
-import type GetSourceHookContext from '../get-format-context'
-import type SourceHookResult from '../get-format-result'
+import type TestSubject from '../get-source'
+import type GetSourceHookContext from '../get-source-context'
+import type SourceHookResult from '../source-result'
 
 describe('unit-d:hooks/GetSourceHook', () => {
   it('should be callable with [ResolvedModuleUrl, GetSourceHookContext, GetSourceHook]', () => {

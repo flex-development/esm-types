@@ -28,6 +28,7 @@ pkgs
 pnpm
 preid
 syncer
+unshift
 unstub
 vates
 yarnrc

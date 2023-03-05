@@ -34,12 +34,14 @@ This package is [ESM only][3].
 
 ```sh
 yarn add @flex-development/esm-types
+yarn add -D @types/node
 ```
 
 From Git:
 
 ```sh
 yarn add @flex-development/esm-types@flex-development/esm-types
+yarn add -D @types/node
 ```
 
 <blockquote>

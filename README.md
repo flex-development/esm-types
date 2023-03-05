@@ -25,7 +25,7 @@
 
 ## What is this?
 
-**TODO**: package overview.
+This package contains [TypeScript][1] definitions for [ECMAScript module][2] utilities and loader hooks.
 
 ## Install
 

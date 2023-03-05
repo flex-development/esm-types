@@ -41,14 +41,7 @@ const config = {
         Chai: 'readonly',
         Console: 'readonly',
         JSX: jsx ? 'readonly' : false,
-        LoadHook: 'readonly',
-        LoadHookContext: 'readonly',
-        LoadHookResult: 'readonly',
-        LoaderHookFormat: 'readonly',
-        NodeJS: 'readonly',
-        ResolveHook: 'readonly',
-        ResolveHookContext: 'readonly',
-        ResolveHookResult: 'readonly'
+        NodeJS: 'readonly'
       },
       parser: '@typescript-eslint/parser',
       parserOptions: {

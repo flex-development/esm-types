@@ -13,7 +13,6 @@
 ## Contents
 
 - [What is this?](#what-is-this)
-- [When should I use this?](#when-should-i-use-this)
 - [Install](#install)
 - [Use](#use)
 - [API](#api)
@@ -27,10 +26,6 @@
 ## What is this?
 
 **TODO**: package overview.
-
-## When should I use this?
-
-**TODO**: use cases.
 
 ## Install
 

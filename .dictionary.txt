@@ -6,6 +6,7 @@ dawidd
 dedupe
 dessant
 dohm
+esmodules
 fbca
 ggshield
 gpgsign

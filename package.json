@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "keywords": [
     "esm",
+    "esmodules",
     "loader",
     "loader-hooks",
     "node",

@@ -30,7 +30,8 @@
     "outDir": "../../../dist",
     "paths": {
       "#src": ["src/index"],
-      "#src/*": ["src/*"]
+      "#src/*": ["src/*"],
+      "@flex-development/esm-types": ["dist/index", "src/index"]
     },
     "preserveConstEnums": true,
     "preserveSymlinks": false,

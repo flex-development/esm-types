@@ -1,5 +1,6 @@
 # esm-types
 
+[![github release](https://img.shields.io/github/v/release/flex-development/esm-types.svg?include_prereleases&sort=semver)](https://github.com/flex-development/esm-types/releases/latest)
 [![npm](https://img.shields.io/npm/v/@flex-development/esm-types.svg)](https://npmjs.com/package/@flex-development/esm-types)
 [![module type: esm](https://img.shields.io/badge/module%20type-esm-brightgreen)](https://github.com/voxpelli/badges-cjs-esm)
 [![license](https://img.shields.io/github/license/flex-development/esm-types.svg)](LICENSE.md)
@@ -253,7 +254,7 @@ There is no default export.
 
 ## Related
 
-- [pkg-types][4] &mdash; [TypeScript][1] definitions for `package.json`
+- [esm-types][4] &mdash; [TypeScript][1] definitions for `package.json`
 
 ## Contribute
 
@@ -262,4 +263,4 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 [1]: https://www.typescriptlang.org
 [2]: https://nodejs.org/api/esm.html
 [3]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
-[4]: https://github.com/flex-development/pkg-types
+[4]: https://github.com/flex-development/esm-types

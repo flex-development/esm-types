@@ -254,7 +254,7 @@ There is no default export.
 
 ## Related
 
-- [esm-types][4] &mdash; [TypeScript][1] definitions for `package.json`
+- [pkg-types][4] &mdash; [TypeScript][1] definitions for `package.json`
 
 ## Contribute
 
@@ -263,4 +263,4 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 [1]: https://www.typescriptlang.org
 [2]: https://nodejs.org/api/esm.html
 [3]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
-[4]: https://github.com/flex-development/esm-types
+[4]: https://github.com/flex-development/pkg-types

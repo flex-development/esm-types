@@ -64,25 +64,35 @@ touch loader.mjs
  * @see https://nodejs.org/api/esm.html#loaders
  */
 
+import { DECORATOR_REGEX } from '@flex-development/decorator-regex'
 import * as esm from '@flex-development/esm-types'
 import * as mlly from '@flex-development/mlly'
 import * as pathe from '@flex-development/pathe'
+import * as tscu from '@flex-development/tsconfig-utils'
 import * as tutils from '@flex-development/tutils'
 import * as esbuild from 'esbuild'
 import { URL, fileURLToPath, pathToFileURL } from 'node:url'
-import tsconfig from './tsconfig.json' assert { type: 'json' }
+import ts from 'typescript'
 
 // add support for extensionless files in "bin" scripts
 // https://github.com/nodejs/modules/issues/488
 mlly.EXTENSION_FORMAT_MAP.set('', esm.Format.COMMONJS)
 
 /**
- * {@linkcode URL} of current working directory.
+ * {@linkcode URL} of tsconfig file.
  *
  * @type {URL}
- * @const cwd
+ * @const tsconfig
  */
-const cwd = pathToFileURL(tsconfig.compilerOptions.baseUrl)
+const tsconfig = mlly.toURL('tsconfig.json')
+
+/**
+ * TypeScript compiler options.
+ *
+ * @type {tscu.CompilerOptions}
+ * @const compilerOptions
+ */
+const compilerOptions = tscu.loadCompilerOptions(tsconfig)
 
 /**
  * Determines how the given module `url` should be interpreted, retrieved, and
@@ -90,6 +100,7 @@ const cwd = pathToFileURL(tsconfig.compilerOptions.baseUrl)
  *
  * @see {@linkcode esm.LoadHookContext}
  * @see {@linkcode esm.LoadHookResult}
+ * @see {@linkcode esm.LoadHook}
  * @see {@linkcode esm.ResolvedModuleUrl}
  * @see https://nodejs.org/api/esm.html#loadurl-context-nextload
  *
@@ -132,11 +143,11 @@ export const load = async (url, context) => {
     }
 
     // resolve path aliases
-    source = await mlly.resolveAliases(source, {
-      aliases: tsconfig.compilerOptions.paths,
+    source = await tscu.resolvePaths(source, {
       conditions: context.conditions,
-      cwd,
-      parent: url
+      ext: '',
+      parent: url,
+      tsconfig
     })
 
     // resolve modules
@@ -144,6 +155,16 @@ export const load = async (url, context) => {
       conditions: context.conditions,
       parent: url
     })
+
+    // emit decorator metadata
+    if (DECORATOR_REGEX.test(source)) {
+      const { outputText } = ts.transpileModule(source, {
+        compilerOptions: { ...compilerOptions, sourceMap: false },
+        fileName: url
+      })
+
+      source = outputText
+    }
 
     // transpile source code
     const { code } = await esbuild.transform(source, {
@@ -153,7 +174,7 @@ export const load = async (url, context) => {
       sourcefile: fileURLToPath(url),
       sourcemap: 'inline',
       target: `node${process.versions.node}`,
-      tsconfigRaw: { compilerOptions: tsconfig.compilerOptions }
+      tsconfigRaw: { compilerOptions }
     })
 
     // set source code to transpiled source
@@ -174,6 +195,7 @@ export const load = async (url, context) => {
  *
  * @see {@linkcode esm.ResolveHookContext}
  * @see {@linkcode esm.ResolveHookResult}
+ * @see {@linkcode esm.ResolveHook}
  * @see https://nodejs.org/api/esm.html#resolvespecifier-context-nextresolve
  *
  * @async
@@ -187,9 +209,9 @@ export const resolve = async (specifier, context) => {
 
   // resolve path alias
   specifier = await mlly.resolveAlias(specifier, {
-    aliases: tsconfig.compilerOptions.paths,
+    aliases: compilerOptions.paths,
     conditions,
-    cwd,
+    cwd: pathToFileURL(compilerOptions.baseUrl),
     parent
   })
 

@@ -1,7 +1,7 @@
 {
   "name": "@flex-development/esm-types",
   "description": "TypeScript definitions for ECMAScript modules",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "keywords": [
     "esm",
     "esmodules",

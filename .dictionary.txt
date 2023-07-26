@@ -28,4 +28,5 @@ tscu
 unshift
 unstub
 vates
+vitest
 yarnrc

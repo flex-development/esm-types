@@ -661,7 +661,7 @@ const config = {
             terms: ['@fixme', '@todo']
           }
         ],
-        'unicorn/explicit-length-check': 2,
+        'unicorn/explicit-length-check': 0,
         'unicorn/filename-case': [
           2,
           {
@@ -835,6 +835,7 @@ const config = {
       },
       plugins: ['chai-expect', 'jest-formatting'],
       rules: {
+        '@typescript-eslint/class-literal-property-style': 0,
         '@typescript-eslint/consistent-indexed-object-style': 0,
         '@typescript-eslint/no-base-to-string': 0,
         '@typescript-eslint/no-empty-function': 0,
@@ -858,7 +859,6 @@ const config = {
         'promise/valid-params': 0,
         'unicorn/consistent-destructuring': 0,
         'unicorn/error-message': 0,
-        'unicorn/explicit-length-check': 0,
         'unicorn/no-array-for-each': 0,
         'unicorn/no-hex-escape': 0,
         'unicorn/no-useless-undefined': 0,
